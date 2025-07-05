@@ -5,28 +5,26 @@ body {
 }
 
 /* Navigation Bar */
+
 nav {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 1rem 0;
+    justify-content: space-around;
+    align-items: center
 }
 
 nav ul {
     display: flex;
-    flex-wrap: wrap;
     list-style: none;
-    gap: 1rem;
-    padding-left: 0;
-    margin: 0;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 20px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 1rem;
-    transition: color 0.2s;
 }
 
 nav ul li a:hover {
@@ -36,9 +34,46 @@ nav ul li a:hover {
 .navbar_line {
     background-color: white;
     height: 2px;
+    margin: 0;
     border: none;
     width: 100%;
-    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 1rem;
+    padding-left: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
 }
 
 /* Footer */
@@ -152,7 +187,7 @@ nav ul li a:hover {
     width: 100%;
     display: flex;
     flex-direction: column;
-    
+
 }
 
 .categories_img {
@@ -172,7 +207,8 @@ nav ul li a:hover {
     opacity: 0.5;
 }
 
-.categories p, .featured_text {
+.categories p,
+.featured_text {
     text-align: left;
     color: white;
     font-size: 1rem;
@@ -256,21 +292,28 @@ nav ul li a:hover {
 
 /* Responsive Breakpoints */
 @media (max-width: 1200px) {
-    .categories_container, .us {
+
+    .categories_container,
+    .us {
         max-width: 1000px;
     }
+
     .Hero_section img {
         max-width: 1000px;
     }
 }
 
 @media (max-width: 992px) {
-    .categories_container, .us {
+
+    .categories_container,
+    .us {
         max-width: 800px;
     }
+
     .Hero_section img {
         max-width: 800px;
     }
+
     .main-container .main-heading {
         font-size: 2.5rem;
     }
@@ -282,30 +325,40 @@ nav ul li a:hover {
         align-items: flex-start;
         padding: 1rem;
     }
+
     nav ul {
         flex-direction: column;
         width: 100%;
         gap: 0.5rem;
     }
+
     .Hero_section img {
         max-width: 100vw;
         min-height: 200px;
         border-radius: 0;
     }
+
     .main-container {
         padding: 10px;
         width: 95%;
     }
-    .categories, .cards {
+
+    .categories,
+    .cards {
         flex-direction: column;
         gap: 1rem;
         align-items: center;
     }
-    .categories_box, .card {
+
+    .categories_box,
+    .card {
         max-width: 400px;
         width: 100%;
     }
-    .categories_heading, .us_heading, .us_subheading {
+
+    .categories_heading,
+    .us_heading,
+    .us_subheading {
         font-size: 1.5rem;
     }
 }
@@ -315,25 +368,34 @@ nav ul li a:hover {
         padding: 10px 0;
         min-height: 150px;
     }
+
     .main-container .main-heading {
         font-size: 1.3rem;
     }
+
     .main-container .main-paragraph {
         font-size: 1rem;
     }
+
     .main-container .hero-button {
         font-size: 1rem;
         width: 120px;
         height: 36px;
         margin: 20px 0 0 0;
     }
-    .categories_box, .card {
+
+    .categories_box,
+    .card {
         max-width: 95vw;
         min-width: 0;
     }
-    .categories_heading, .us_heading, .us_subheading {
+
+    .categories_heading,
+    .us_heading,
+    .us_subheading {
         font-size: 1.2rem;
     }
+
     .footer-text {
         font-size: 0.9rem;
     }

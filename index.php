@@ -1,14 +1,30 @@
-
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
- 
+
+    <!-- navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">product</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="index.php">Contact Us</a></li>
+            <li><a href="deals_and_offers.html">Deal & Offers</a></li>
+        </ul>
+    </nav>
+    <hr class="navbar_line">
+    
+    
+    <!-- rest of your code -->
+
   <main class="div1">
     <h2>Contact Us</h2>
     <form class="contact-form" action="massage.php" method="post">
@@ -19,7 +35,7 @@
       <input type="email" name="email" id="email" placeholder="Your email" required>
 
       <label for="message">Message</label>
-      <textarea name="message" rows="5" id="message" placeholder="Your message"required></textarea>
+      <textarea name="message" rows="5" id="message" placeholder="Your message" required></textarea>
 
       <button type="submit" class="btn">Send</button>
     </form>
@@ -60,4 +76,5 @@
     </section>
   </main>
 </body>
+
 </html>

@@ -66,4 +66,4 @@ $offers = [
     'cta' => 'Verify Now'
   ]
 ];
-echo json_encode($offers); 
+echo json_encode($offers_deals); 

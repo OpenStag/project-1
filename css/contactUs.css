@@ -156,3 +156,18 @@ button:hover {
   font-size: 18px;
   color: white;
 }
+
+/* Footer */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 10px;
+}
+
+.footer-text {
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    padding-bottom: 1rem;
+}

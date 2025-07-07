@@ -182,10 +182,19 @@ p {
   padding: 10px;
 }
 
+/* Footer */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 10px;
+}
+
 .footer-text {
-  text-align: center;
-  color: white;
-  font-size: 20px;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    padding-bottom: 1rem;
 }
 
 .responsive-image {

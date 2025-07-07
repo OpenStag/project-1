@@ -13,11 +13,11 @@
     <!-- navbar -->
     <nav class="navbar">
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="./home.html">Home</a></li>
             <li><a href="product.html">product</a></li>
             <li><a href="about_us.html">About Us</a></li>
-            <li><a href="index.php">Contact Us</a></li>
-            <li><a href="deals_and_offers.html">Deal & Offers</a></li>
+            <li><a href="./contactUs.php">Contact Us</a></li>
+            <li><a href="./Offers_deals.html">Deal & Offers</a></li>
         </ul>
     </nav>
     <hr class="navbar_line">

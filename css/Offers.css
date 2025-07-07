@@ -6,35 +6,76 @@ body {
   padding: 0;
 }
 
-.navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #181f2a;
-  padding: 1rem 2rem;
-  gap: 2rem;
+/* Navigation Bar */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center
 }
-.logo {
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: #5ABBDB;
-  margin-right: 2.5rem;
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
 }
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
+
+nav ul li {
+    margin-left: 20px;
 }
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
 }
-.nav-links a.active, .nav-links a:hover {
-  color: #5ABBDB;
+
+nav ul li a:hover {
+    color: red;
+}
+
+.navbar_line {
+    background-color: white;
+    height: 2px;
+    margin: 0;
+    border: none;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 1rem;
+    padding-left: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
 }
 
 .hero {
@@ -190,26 +231,6 @@ section h2 {
   transform: translateY(-2px) scale(1.04);
 }
 
-.footer-content {
-  text-align: center;
-  padding: 2rem 0 1rem 0;
-  background: #181f2a;
-  border-radius: 0 0 18px 18px;
-}
-.social-icons {
-  margin-bottom: 0.7rem;
-}
-.social-icons a {
-  color: #5ABBDB;
-  font-size: 1.5rem;
-  margin: 0 0.7rem;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.social-icons a:hover {
-  color: #fff;
-}
-
 /* Offer images styling */
 .offer-img {
   width: 100%;
@@ -220,6 +241,21 @@ section h2 {
   object-fit: cover;
   margin-bottom: 1rem;
   transition: transform 0.4s, box-shadow 0.4s;
+}
+
+/* Footer */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 10px;
+}
+
+.footer-text {
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    padding-bottom: 1rem;
 }
 
 /* Offer card hover polish */

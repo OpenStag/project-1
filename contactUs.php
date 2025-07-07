@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contactUs.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -75,6 +75,23 @@
       </div>
     </section>
   </main>
+
+      <!-- footer -->
+    <hr class="navbar_line 2">
+    <footer>
+        <div class="social-media">
+            <a href="https://www.facebook.com/" target="_blank"> <img src="/images/facebook.png" width="46px"
+                    height="46px"></a>
+            <a href="https://twitter.com/" target="_blank"> <img src="/images/twiter.png" width="46px"
+                    height="46px"></a>
+            <a href="https://www.instagram.com/" target="_blank"> <img src="/images/instargram.png" width="46px"
+                    height="46px"> </a>
+        </div>
+
+        <div class="footer-text">
+            @2025 Tech Haven. All rights reserved.
+        </div>
+    </footer>
 </body>
 
 </html>

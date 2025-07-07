@@ -1,5 +1,5 @@
 body {
-  background: #101820;
+  background: #0A1F26;
   color: #fff;
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -30,8 +30,28 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: red;
-}
+        color: #00ccff;
+        transform: translateY(-2px);
+      }
+      
+      nav ul li a.active {
+        color: #00ccff;
+        font-weight: 600;
+      }
+      
+      nav ul li a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: #00ccff;
+        transition: width 0.3s ease;
+      }
+      nav ul li a:hover::after {
+        width: 100%;
+      }
 
 .navbar_line {
     background-color: white;
@@ -92,7 +112,7 @@ section {
   margin: 2rem auto;
   max-width: 1100px;
   padding: 1.5rem 1rem;
-  background: rgba(24, 31, 42, 0.85);
+  background: #0e2e3e;
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
 }

@@ -28,8 +28,28 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: red;
-}
+        color: #00ccff;
+        transform: translateY(-2px);
+      }
+      
+      nav ul li a.active {
+        color: #00ccff;
+        font-weight: 600;
+      }
+      
+      nav ul li a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: #00ccff;
+        transition: width 0.3s ease;
+      }
+      nav ul li a:hover::after {
+        width: 100%;
+      }
 
 .navbar_line {
     background-color: white;

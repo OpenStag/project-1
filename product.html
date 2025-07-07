@@ -1,25 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/product.css">
-</head>
-<body>
-        <!-- navbar -->
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="product.html">product</a></li>
-                <li><a href="about_us.html">About Us</a></li>
-                <li><a href="index.php">Contact Us</a></li>
-                <li><a href="deals_and_offers.html">Deal & Offers</a></li>
-            </ul>
-        </nav>
-        <hr class="navbar_line">
+  <head>
+    <title>Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html { line-height: 1.15; }
+      body { margin: 0; }
+      * { box-sizing: border-box; border-width: 0; border-style: solid; -webkit-font-smoothing: antialiased; }
+      p, li, ul, pre, div, h1, h2, h3, h4, h5, h6, figure, blockquote, figcaption { margin: 0; padding: 0; }
+      button { background-color: transparent; }
+      button, input, optgroup, select, textarea { font-family: inherit; font-size: 100%; line-height: 1.15; margin: 0; }
+      button, select { text-transform: none; }
+      button, [type="button"], [type="reset"], [type="submit"] { -webkit-appearance: button; color: inherit; }
+      button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner { border-style: none; padding: 0; }
+      button:-moz-focus, [type="button"]:-moz-focus, [type="reset"]:-moz-focus, [type="submit"]:-moz-focus { outline: 1px dotted ButtonText; }
+      a { color: inherit; text-decoration: inherit; }
+      input { padding: 2px 4px; }
+      img { display: block; }
+      details { display: block; margin: 0; padding: 0; }
+      summary::-webkit-details-marker { display: none; }
+      [data-thq="accordion"] [data-thq="accordion-content"] { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out; padding: 0; }
+      [data-thq="accordion"] details[data-thq="accordion-trigger"][open] + [data-thq="accordion-content"] { max-height: 1000vh; }
+      details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] { transform: rotate(180deg); }
+      html { scroll-behavior: smooth; }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+      body {
+        font-weight: 400;
+        font-style: normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background: var(--dl-color-theme-neutral-light);
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" data-tag="font" />
+    <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
+    <style>
+      .product-tile {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .product-tile:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      .product-tile img {
+        transition: transform 0.3s ease;
+      }
+      .product-tile:hover img {
+        transform: scale(1.05);
+      }
+      
+      /* Navigation styles */
+      .navigation {
+        background-color: rgba(8, 28, 37, 1);
+        padding: 20px 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid white; /* Thin white line under navigation */
+      }
+      
+      .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        position: absolute;
+        left: 40px;
+      }
+      
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-grow: 1;
+      }
+      
+      .nav-links a {
+        color: white;
+        font-family: 'Inter', sans-serif;
+        font-size: 18px;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+        position: relative;
+      }
+      
+      .nav-links a:hover {
+        color: #00ccff;
+        transform: translateY(-2px);
+      }
+      
+      .nav-links a.active {
+        color: #00ccff;
+        font-weight: 600;
+      }
+      
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: #00ccff;
+        transition: width 0.3s ease;
+      }
+      
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      
+      .menu-toggle {
+        display: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        position: absolute;
+        right: 40px;
+      }
+      
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background-color: rgba(8, 28, 37, 0.95);
+          padding: 20px;
+          gap: 20px;
+          justify-content: flex-start;
+        }
         
+        .nav-links.active {
+          display: flex;
+        }
         
-        <!-- rest of your code -->
-</body>
+        .menu-toggle {
+          display: block;
+        }
+        
+        .logo {
+          left: 20px;
+        }
+      }
+      
+      /* Footer styles */
+      footer {
+        background-color: rgba(8, 28, 37, 1);
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        margin-top: 40px;
+        border-top: 1px solid white; /* Thin white line above footer */
+      }
+      
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 10px;
+      }
+      
+      .social-links a {
+        display: inline-block;
+      }
+      
+      .social-links img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.3s ease;
+      }
+      
+      .social-links a:hover img {
+        transform: scale(1.1);
+      }
+    </style>
+    <link href="./index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation Section -->
+    <nav class="navigation">
+      <div class="logo">Tech Haven</div>
+      <div class="menu-toggle">☰</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="product.html" class="active">Product</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="deals.html">Deals & Offers</a>
+      </div>
+    </nav>
+
+    <div class="productpage2-container">
+      <div class="productpage2-productpage2">
+        <span class="productpage2-text19">Shop All Products</span>
+        <div class="productpage2-group1">
+          <div class="product-tile">
+            <img src="public/external/rectangle301213-pef-300h.png" alt="Rectangle301213" class="productpage2-rectangle301" />
+            <span class="productpage2-text20">
+              <span class="productpage2-text21">HyperSpeed DDR5 32GB RAM</span>
+              <br />
+              <span>Fast multitasking. Stable and efficient.</span>
+            </span>
+          </div>
+          <div class="product-tile">
+            <img src="public/external/rectangle311213-q21b-300h.png" alt="Rectangle311213" class="productpage2-rectangle311" />
+            <span class="productpage2-text24">
+              <span class="productpage2-text25">FireCore Z980 SSD</span>
+              <br />
+              <span>Ultra-fast boot and load times.</span>
+            </span>
+          </div>
+          <div class="product-tile">
+            <img src="public/external/rectangle321214-cgtb-300h.png" alt="Rectangle321214" class="productpage2-rectangle321" />
+            <span class="productpage2-text28">
+              <span class="productpage2-text29">NVIDIA GeForce RTX 4070</span>
+              <br />
+              <span>4K gaming. Ray tracing power.</span>
+            </span>
+          </div>
+          <div class="product-tile">
+            <img src="public/external/rectangle331214-0r4a-300h.png" alt="Rectangle331214" class="productpage2-rectangle331" />
+            <span class="productpage2-text32">
+              <span class="productpage2-text33">PowerMax 750W Gold PSU</span>
+              <br />
+              <span>Efficient power. Silent and reliable</span>
+            </span>
+          </div>
+        </div>
+        <div class="productpage2-group2">
+          <div class="product-tile">
+            <img src="public/external/rectangle301417-tbt3-300h.png" alt="Rectangle301417" class="productpage2-rectangle302" />
+            <span class="productpage2-text36">
+              <span class="productpage2-text37">GlideMax RGB Mouse</span>
+              <br />
+              <span>Precision clicks. RGB. Fast response.</span>
+            </span>
+          </div>
+          <div class="product-tile">
+            <img src="public/external/rectangle311417-jp8l-300h.png" alt="Rectangle311417" class="productpage2-rectangle312" />
+            <span class="productpage2-text40">
+              <span class="productpage2-text41">KeyBlaze Mechanical Pro</span>
+              <br />
+              <span>Tactile feel. Durable. RGB backlit.</span>
+            </span>
+          </div>
+          <div class="product-tile">
+            <img src="public/external/rectangle321417-huzw-300h.png" alt="Rectangle321417" class="productpage2-rectangle322" />
+            <span class="productpage2-text44">
+              <span class="productpage2-text45">SonicBass H7</span>
+              <br />
+              <span>Clear audio. Long battery life.</span>
+            </span>
+          </div>
+          <div class="product-tile">
+            <img src="public/external/rectangle331417-h3yc-300h.png" alt="Rectangle331417" class="productpage2-rectangle332" />
+            <span class="productpage2-text48">
+              <span class="productpage2-text49">CoolStand X100</span>
+              <br />
+              <span>Silent fans. Keeps laptop cool.</span>
+            </span>
+          </div>
+        </div>
+        <div class="productpage2-group3">
+          <div class="product-tile">
+            <img src="public/external/rectangle301418-spsd-300h.png" alt="Rectangle301418" class="productpage2-rectangle303" />
+            <span class="productpage2-text52">
+              <span class="productpage2-text53">IronCore X5</span>
+              <br />
+              <span class="productpage2-text55">Gaming Desktop PC</span>
+              <br />
+              <span>RTX graphics. Smooth ultra gaming.</span>
+            </span>
+          </div>
+          <div class="product-tile">
+            <img src="public/external/rectangle311418-1e4-300h.png" alt="Rectangle311418" class="productpage2-rectangle313" />
+            <span class="productpage2-text58">
+              <span class="productpage2-text59">Fusion Pro Station</span>
+              <br />
+              <span class="productpage2-text61">Creative Work Desktop</span>
+              <br />
+              <span>Powerful build for creative professionals.</span>
+            </span>
+          </div>
+          <div class="product-tile">
+            <img src="public/external/rectangle321418-gtz-300h.png" alt="Rectangle321418" class="productpage2-rectangle323" />
+            <span class="productpage2-text64">
+              <span class="productpage2-text65">SkyForge Mini X</span>
+              <br />
+              <span class="productpage2-text67">Compact Desktop PC</span>
+              <br />
+              <span>Small size. Big performance boost.</span>
+            </span>
+          </div>
+          <div class="product-tile">
+            <img src="public/external/rectangle331418-ydn-300h.png" alt="Rectangle331418" class="productpage2-rectangle333" />
+            <span class="productpage2-text70">
+              <span class="productpage2-text71">Vortex Tower R9</span>
+              <br />
+              <span class="productpage2-text73">High-End Performance Desktop</span>
+              <br />
+              <span>Multitask. Edit. Stream. Game effortlessly.</span>
+            </span>
+          </div>
+        </div>
+        <div class="productpage2-group4">
+          <div class="product-tile">
+            <img src="public/external/rectangle301419-i99c-300h.png" alt="Rectangle301419" class="productpage2-rectangle304" />
+            <span class="productpage2-text76">
+              <span class="productpage2-text77">Quantum X1</span>
+              <br />
+              <span class="productpage2-text79">Gaming Laptop</span>
+              <br />
+              <span>High-performance gaming laptop with RTX 3080</span>
+            </span>
+          </div>
+          <div class="product-tile">
+            <img src="public/external/rectangle311419-0n5n-300h.png" alt="Rectangle311419" class="productpage2-rectangle314" />
+            <span class="productpage2-text82">
+              <span class="productpage2-text83">NovaBlade 15</span>
+              <br />
+              <span class="productpage2-text85">Ultimate Gaming Laptop</span>
+              <br />
+              <span>4K gaming. Fast. Reliable speed.</span>
+            </span>
+          </div>
+          <div class="product-tile">
+            <img src="public/external/rectangle321419-dq5c-300h.png" alt="Rectangle321419" class="productpage2-rectangle324" />
+            <span class="productpage2-text88">
+              <span class="productpage2-text89">StormCore Z17</span>
+              <br />
+              <span class="productpage2-text91">Pro-Level Gaming Beast</span>
+              <br />
+              <span>Ryzen speed. VR-ready. No compromise.</span>
+            </span>
+          </div>
+          <div class="product-tile">
+            <img src="public/external/rectangle331419-t67b-300h.png" alt="Rectangle331419" class="productpage2-rectangle334" />
+            <span class="productpage2-text94">
+              <span class="productpage2-text95">TitanEdge V7</span>
+              <br />
+              <span class="productpage2-text97">Elite Gaming & Workstation Laptop</span>
+              <br />
+              <span>Work, game, render. All-in-one.</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="social-links">
+        <a href="https://www.facebook.com"><img src="public/external/facebook.png" alt="Facebook" /></a>
+        <a href="https://www.instagram.com"><img src="public/external/instagram.png" alt="Instagram" /></a>
+        <a href="https://www.twitter.com"><img src="public/external/twitter.png" alt="Twitter" /></a>
+      </div>
+      <p>@2025 Tech Haven. All rights reserved.</p>
+    </footer>
+    
+   
+  </body>
 </html>
